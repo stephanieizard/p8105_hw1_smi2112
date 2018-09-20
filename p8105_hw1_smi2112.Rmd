@@ -49,10 +49,12 @@ question_two_df <- tibble(
 
 The size of the dataset is `r dim(question_two_df)`. The mean of x is `r mean(question_two_df$x)` and the median of x is `r median(question_two_df$x)`. The proportion of cases for which the logical vector is true is `r mean(question_two_df$logical_vec)`.
 
-Creating the first scatterplot with color points using the logical variable:
+Creating the first scatterplot with color points using the logical variable, and exporting to the project directory:
 
 ```{r}
 ggplot(question_two_df, aes(x = x, y = y, color = logical_vec)) + geom_point()
+
+ggsave("hw1_scatterplot.pdf")
 ```
 
 Creating the second scatterplot with color points using the numeric variable:
@@ -67,12 +69,7 @@ Creating the third scatterplot with color points using the factor variable:
 ggplot(question_two_df, aes(x = x, y = y, color = factor_vec)) + geom_point()
 ```
 
-The color scale in the first scatterplot is binary, which makes sense becuase the logical vector only has two options (TRUE of FALSE). The color scale in the second scatterplot is continuous on a scale from 0 to 1, which makes sense because we are coloring a numeric variable that has a minimum of 0 and a maximum of 1. However, because the values will either be 0 or 1, we only see the extreme ends of the color scale (the color that corresponds with 0 and the color scale that corresponds with 1). The color scale in the third scatterplot is binary again, which makes sense 
+Commenting on the color scales of each scatterplot:
 
+The color scale in the first scatterplot is binary, which makes sense becuase the logical vector only has two options (TRUE of FALSE). The color scale in the second scatterplot is continuous on a scale from 0 to 1, which makes sense because we are coloring a numeric variable that has a minimum of 0 and a maximum of 1. However, because the values will either be 0 or 1, we only see the extreme ends of the color scale (the color that corresponds with 0 and the color scale that corresponds with 1). The color scale in the third scatterplot is binary again, which makes sense becuase there are only two options again, TRUE or FALSE.
 
-Exporting the first scatterplot to th project directory:
-
-```{r}
-ggplot(question_two_df, aes(x = x, y = y, color = logical_vec)) + geom_point()
-
-```
