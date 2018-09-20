@@ -33,6 +33,17 @@ The mean of the random sample works because the vector is made up of numbers gen
 
 The mean of the character vector and the factor vector do not work becuase they are not numbers.
 
+# Question 2
+
+```{r}
+question_two_df <- tibble(
+  x = rnorm(1000),
+  y = rnorm(1000),
+  logical_vec = x + y > 0,
+  numeric_vec = as.numeric(logical_vec),
+  factor_vec = as.factor(logical_vec)
+)
+```
 
 
 
