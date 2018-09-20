@@ -35,6 +35,8 @@ The mean of the character vector and the factor vector do not work becuase they 
 
 # Question 2
 
+Creating the data frame:
+
 ```{r}
 question_two_df <- tibble(
   x = rnorm(1000),
@@ -47,13 +49,22 @@ question_two_df <- tibble(
 
 The size of the dataset is `r dim(question_two_df)`. The mean of x is `r mean(question_two_df$x)` and the median of x is `r median(question_two_df$x)`. The proportion of cases for which the logical vector is true is `r mean(question_two_df$logical_vec)`.
 
+Creating the first scatterplot with color points using the logical variable:
 
+```{r}
+ggplot(question_two_df, aes(x = x, y = y, color = logical_vec)) + geom_point()
+```
 
+Creating the second scatterplot with color points using the numeric variable:
 
+```{r}
+ggplot(question_two_df, aes(x = x, y = y, color = numeric_vec)) + geom_point()
+```
 
+Creating the third scatterplot with color points using the factor variable:
 
-
-
-
+```{r}
+ggplot(question_two_df, aes(x = x, y = y, color = factor_vec)) + geom_point()
+```
 
 
